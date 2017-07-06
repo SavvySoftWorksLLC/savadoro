@@ -24,12 +24,11 @@ body {
 }
 
 input[type="text"] {
-  width: 4em;
-  margin: 1em 1em;
+  width: 3em;
 }
 
-.btn-group {
-  font-size: 2em;
+input {
+  color: #333333;
 }
 
 .btn-group button {
