@@ -15,30 +15,32 @@
       <div class="container">
         <h1 class="savadoro--title">Savadoro</h1>
 
-        <form class="session-input">
-          <div class="row">
-            <div class="col s6">
-              <input type="text" id="pomodoro" name="pomodoro" class=" browser-default"> Pomodoro
+          <form>
+            <div class="session-input">
+              <div class="row">
+                <div class="col s6">
+                  <input type="text" id="pomodoro" name="pomodoro" class=" browser-default"> Pomodoro
+                </div>
+                <div class="col s6">
+                  <input type="text" id="short-break" name="short-break" class="browser-default"> Short Break
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <input type="text" id="sessions" name="sessions" class=" browser-default"> Sessions
+                </div>
+                <div class="col s6">
+                  <input type="text" id="long-break" name="long-break" class="browser-default"> Long Break
+                </div>
+              </div>
             </div>
-            <div class="col s6">
-              <input type="text" id="short-break" name="short-break" class="browser-default"> Short Break
+            <div class="btn-group center">
+              <button type="submit" class="start-btn left" id="start">Start</button>
+              <button id="pause" class="pause-btn center">II</button>
+              <button type="reset" id="reset" class="reset-btn right">Reset</button>
             </div>
-          </div>
-          
-          <div class="row">
-            <div class="col s6">
-              <input type="text" id="sessions" name="sessions" class=" browser-default"> Sessions
-            </div>
-            <div class="col s6">
-              <input type="text" id="long-break" name="long-break" class="browser-default"> Long Break
-            </div>
-          </div>
-          <div class="btn-group center">
-            <button type="submit" class="start-btn" id="start">Start</button>
-            <button id="pause" class="pause-btn">II</button>
-            <button type="reset" id="reset" class="reset-btn">Reset</button>
-          </div>
-        </form>
+          </form>
+        </div>
 
         <div class="timer-backdrop">
           <div class="center current">
