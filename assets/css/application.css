@@ -12,6 +12,10 @@ body {
 }
 
 .savadoro {
+  width: 480px;
+  height: 560px;
+
+  background: radial-gradient(140.00px at 50% 75.51%, #F5F5F5 0%, rgba(245, 245, 245, 0) 100%);
 }
 
 .savadoro--title {
@@ -48,10 +52,8 @@ input[type="text"] {
   font-size: 1.3em;
 }
 
-/*.timer-backdrop {
-  background: radial-gradient(480.00px at 50% 50%, #F5F5F5 0%, rgba(245, 245, 245, 0) 20%);
-}
-*/
+.timer-backdrop {  }
+
 .timer {
   border-radius: 50%;
   /* Ellipse */
@@ -61,7 +63,7 @@ input[type="text"] {
   height: 160px;
   color: #333333;
   background: #F5F5F5;
-  border: 4px solid #418BC4;
+  border: 2px solid #418BC4;
   box-sizing: border-box;
 }
 
