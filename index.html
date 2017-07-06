@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Savadoro</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Numans" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/application.css">
+
+  </head>
+  <body>
+    <div class="savadoro">
+      <div class="container">
+        <h1 class="savadoro--title">Savadoro</h1>
+
+        <form class="session-input">
+          <div class="row">
+            <div class="col s6">
+              <input type="text" id="pomodoro" name="pomodoro" class=" browser-default"> Pomodoro
+            </div>
+            <div class="col s6">
+              <input type="text" id="short-break" name="short-break" class="browser-default"> Short Break
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s6">
+              <input type="text" id="sessions" name="sessions" class=" browser-default"> Sessions
+            </div>
+            <div class="col s6">
+              <input type="text" id="long-break" name="long-break" class="browser-default"> Long Break
+            </div>
+          </div>
+          <div class="btn-group center">
+            <button type="submit" class="start-btn" id="start">Start</button>
+            <button id="pause" class="pause-btn">II</button>
+            <button type="reset" id="reset" class="reset-btn">Reset</button>
+          </div>
+        </form>
+
+        <div class="timer-backdrop">
+          <div class="center current">
+            <p>Current Session: Short Break 2<span id="current-session"></span></p>
+          </div>
+          <div class="row">
+            <div class="valign-wrapper timer center">
+              <h1 id="current-time">19:30</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
