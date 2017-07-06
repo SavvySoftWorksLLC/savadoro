@@ -23,29 +23,35 @@ body {
   text-align: center;
 }
 
+.session-input {
+  margin-left: 3em;
+}
+
 input[type="text"] {
-  width: 4em;
-  margin: 1em 1em;
+  width: 3em;
+}
+
+input {
+  color: #333333;
 }
 
 .btn-group {
   font-size: 2em;
 }
 
-.btn-group button {
-  padding: 0em 1em;
-}
-
 .start-btn {
   color: #009900;
+  padding: 0 1.7em;
 }
 
 .pause-btn {
   color: #333333;
+  padding: 0 1em;
 }
 
 .reset-btn {
   color: #990000;
+  padding: 0 1.7em;
 }
 
 .current {
