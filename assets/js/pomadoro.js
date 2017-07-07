@@ -10,7 +10,10 @@ $(function(){
 
   $('#start').on('click', function(e){
     e.preventDefault();
-    console.log("Beginning timer");
+    var pomodoro = $("#pomodoro").val();
+    console.log(pomodoro);
+    $("#current-time").text(pomodoro);
+    runTimer(pomodoro);
   });
 
   $("pause").on('click', function(e){
@@ -24,3 +27,11 @@ $(function(){
 		}
   });
 });
+
+
+function runTimer(pomodoro) {
+  var start = require("moment");
+  var finish = start().add(pomodoro, "minutes");
+  /** Code gets iffy here **/
+  var moment = require("moment");
+}
