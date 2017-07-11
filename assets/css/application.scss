@@ -22,7 +22,7 @@ body {
   height: 560px;
 
   background: radial-gradient(140.00px at 50% 71.51%, #F5F5F5 0%, rgba(245, 245, 245, 0) 100%);
-  
+
   .savadoro--title {
     font-family: 'Philosopher', sans-serif;
     text-align: center;
@@ -30,8 +30,8 @@ body {
   .session-input {
     margin-left: 3em;
   }
-  input[type="text"] {
-    width: 3em;
+  input[type="text"], input[type="number"] {
+    width: 4em;
     background-color: $lighttext;
     color: $darktext;
     text-align: right;

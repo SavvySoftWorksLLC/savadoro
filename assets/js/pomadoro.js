@@ -11,8 +11,6 @@ $(function(){
   $('#start').on('click', function(e){
     e.preventDefault();
     var pomodoro = $("#pomodoro").val();
-    console.log(pomodoro);
-    $("#current-time").text(pomodoro);
     runTimer(pomodoro);
   });
 
@@ -30,8 +28,21 @@ $(function(){
 
 
 function runTimer(pomodoro) {
-  var start = require("moment");
-  var finish = start().add(pomodoro, "minutes");
+  const moment = require('moment');
+  var startTime = moment().valueOf();
+  var pomoForRealDo = pomodoro * 60 * 1000
+  console.log(pomoForRealDo)
+  var endTime = startTime + pomoForRealDo
+  console.log(endTime)
+  var diff = moment(pomoForRealDo).format("mm:ss")
+  console.log(diff)
+  $("#current-time").text(diff);
+  // var startTimeFormatted = startTime.format("h:mm:ss")
+  // var endTime = startTime.add(pomodoro, "minutes");
+  // var endTimeFormatted = endTime.format("h:mm:ss")
+
+
   /** Code gets iffy here **/
-  var moment = require("moment");
+  //var moment = require("moment");
 }
+
