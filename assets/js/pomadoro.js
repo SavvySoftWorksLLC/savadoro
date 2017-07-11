@@ -12,6 +12,7 @@ $(function(){
 
   $('#start').on('click', function(e){
     e.preventDefault();
+    getSessions();
     var pomodoro = $("#pomodoro").val();
     runTimer(pomodoro);
   });
@@ -27,6 +28,24 @@ $(function(){
 		}
   });
 });
+
+
+
+
+function getSessions() {
+  var pomodoro = $('#pomodoro').val();
+  var shortBreak = $('#short-break').val();
+  var longBreak = $('#long-break').val();
+  var sessionsNum = $('#sessions').val();
+  var sessions = [['pomodor', 10], ['short break', 3], ['long break', 15], ['sessions', 4]];
+  for (var i=0; i < sessions[3][1]; i++){
+    console.log('butt')
+  }
+  for (var ii=0; ii < sessions[3][1]; ii++){
+    console.log(sessions[0][0]);
+    console.log(sessions[1][0]);
+  }
+}
 
 function notify() {
   var notification = new Notification("Timer Stopped")
@@ -51,7 +70,8 @@ function timer(time) {
       $('#current-time').text('00:00')
       notify()
     }
-    if(duration._milliseconds < 0) {        stopTimer(countdown)
+    if(duration._milliseconds < 0) {
+      stopTimer(countdown)
     }
   }, 1000)
   countdown
