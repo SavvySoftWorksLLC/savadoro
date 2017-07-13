@@ -113,9 +113,10 @@ body {
     padding: 2em;
     width: 240px;
     height: 160px;
-    color: #333333;
+    // color: #333333;
+    color: darken($savvyblue, 20%);
     background: $lighttext;
-    border: 2px solid $savvyblue;
+    border: 2px $savvyblue;
     box-sizing: border-box;
   }
 
