@@ -16,10 +16,10 @@ $(function(){
   	e.preventDefault();
     if(notPaused == true) {
       notPaused = false;
-      $('#start').attr('disabled', true);
+      $('.overlay-div').css('display', 'block');
     } else {
       notPaused = true;
-      $('#start').attr('disabled', false);
+      $('.overlay-div').css('display', 'none');
     }
   });
 
