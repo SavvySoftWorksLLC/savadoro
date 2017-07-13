@@ -20,8 +20,6 @@ $(function(){
   $('#start').on('click', function(e){
     e.preventDefault();
     savadoro();
-    var pomodoro = $("#pomodoro").val();
-    runTimer(pomodoro);
   });
 
   $("#pause").on('click', function(e){
@@ -99,7 +97,6 @@ function timer(time) {
 }
 
 function runTimer(pomodoro) {
-  changeSession();
   var startTime = moment().valueOf();
   var pomoForRealDo = pomodoro * 60 * 1000
   var endTime = startTime + pomoForRealDo
