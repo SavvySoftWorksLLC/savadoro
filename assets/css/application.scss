@@ -4,8 +4,10 @@ $savvyblue: #418BC4;
 $darktext: #333333;
 $lighttext: #F5F5F5;
 
-$start: #009900;
-$reset: #990000;
+$btnhover: #F5F5FF;
+
+$start: #388659;
+$reset: #E94F37;
 
 body {
   background-color: $savvyblue;
@@ -31,19 +33,22 @@ body {
 }
 
 .savadoro {
-  width: 480px;
-  height: 560px;
 
-  background: radial-gradient(140.00px at 50% 71.51%, #F5F5F5 0%, rgba(245, 245, 245, 0) 100%);
+  width: 480px;
+  height: 608px;
+
+  background: radial-gradient(172.00px at 50% 73.51%, #F5F5F5 0%, rgba(245, 245, 245, 0) 100%);
 
   .savadoro--title {
     font-family: 'Philosopher', sans-serif;
     text-align: center;
   }
   .session-input {
-    margin-left: 3em;
+    margin-left: 2em;
+    font-size: 1.25em;
   }
   input[type="text"], input[type="number"] {
+    height: 2em;
     width: 4em;
     background-color: $lighttext;
     color: $darktext;
@@ -57,34 +62,37 @@ body {
   }
 
   .start-btn {
+    background-color: $lighttext;
     color: $start;
     padding: 0 1.7em;
     height:100%;
-    &:focus {
-    background-color: $start;
-    color: $lighttext;
+    &:focus, &:active, &:hover{
+      background-color: $btnhover;
+      color: $start;
     }
   }
 
   .pause-btn {
+    background-color: $lighttext;
     color: $darktext;
     padding: 0 1em;
     z-index: 9999;
     position: relative;
     height: 100%;
-    &:focus {
-      background-color: $darktext;
-      color: $lighttext;
+    &:focus, &:active, &:hover{
+      background-color: $btnhover;
+      color: $darktext;
     }
   }
 
   .reset-btn {
+    background-color: $lighttext;
     color: $reset;
     padding: 0 1.7em;
     height: 100%;
-    &:focus {
-      background-color: $reset;
-      color: $lighttext;
+    &:focus, &:active, &:hover{
+      background-color: $btnhover;
+      color: $reset;
     }
   }
 
@@ -93,7 +101,10 @@ body {
     font-size: 1.3em;
   }
 
-  .timer-backdrop { padding-bottom: 2em; }
+  .timer-backdrop {
+    padding-bottom: 2em;
+    font-size: 1.25em;
+  }
 
   .timer {
     border-radius: 50%;
