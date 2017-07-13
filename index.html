@@ -2,6 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Savadoro</title>
 
@@ -36,7 +37,9 @@
             </div>
             <div class="btn-group center">
               <button type="submit" class="start-btn left" id="start">Start</button>
-              <button id="pause" class="pause-btn center">II</button>
+              <button id="pause" class="pause-btn center">
+                <i id="pause-icon" class="material-icons small valign-wrapper">pause</i>
+              </button>
               <button type="reset" id="reset" class="reset-btn right">Reset</button>
             </div>
           </form>

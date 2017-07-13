@@ -53,11 +53,13 @@ body {
   }
   .btn-group {
     font-size: 2em;
+    height: 46px;
   }
 
   .start-btn {
     color: $start;
     padding: 0 1.7em;
+    height:100%;
     &:focus {
     background-color: $start;
     color: $lighttext;
@@ -69,6 +71,7 @@ body {
     padding: 0 1em;
     z-index: 9999;
     position: relative;
+    height: 100%;
     &:focus {
       background-color: $darktext;
       color: $lighttext;
@@ -78,6 +81,7 @@ body {
   .reset-btn {
     color: $reset;
     padding: 0 1.7em;
+    height: 100%;
     &:focus {
       background-color: $reset;
       color: $lighttext;
