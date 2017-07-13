@@ -4,18 +4,7 @@ var currentSession = 1;
 var stage = 1;
 
 $(function(){
-
-	$.getJSON('assets/default.json', function(data) {
-
-		for(var i in data) {
-			$('input[name="'+ i +'"]').val(data[i]);
-		}
-		$("#current-time").text('0:00');
-		$("#current-session").text('0');
-    window.onchange=getSessionInfo;
-	});
-
-
+  setDefaults();
 
   $('#start').on('click', function(e){
     e.preventDefault();
@@ -26,11 +15,9 @@ $(function(){
   	e.preventDefault();
   });
 
-    $("#reset").on('click', function(e){
-  	e.preventDefault();
-  	for(var i in data) {
-			$('input[name="'+ i +'"]').val(data[i]);
-		}
+  $("#reset").on('click', function(e){
+    e.preventDefault();
+    setDefaults();
   });
 });
 
@@ -81,6 +68,10 @@ function timer(time) {
   var interval = 1
   var countdown = setInterval(function () {
     duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+    $('#reset').on('click', function() {
+      setDefaults();
+      stopTimer(countdown);
+    });
     if(duration._milliseconds > -1) {
       var time = moment(duration._milliseconds).format('mm:ss')
       $('#current-time').text(time)
@@ -105,3 +96,13 @@ function runTimer(pomodoro) {
   timer(pomoForRealDo)
 }
 
+function setDefaults() {
+  $.getJSON('assets/default.json', function(data) {
+    for(var i in data) {
+      $('input[name="'+ i +'"]').val(data[i]);
+    }
+    $("#current-time").text('0:00');
+    $("#current-session").text('0');
+    window.onchange=getSessionInfo;
+  });
+}
