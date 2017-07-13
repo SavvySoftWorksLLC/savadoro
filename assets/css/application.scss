@@ -30,6 +30,28 @@ body {
   bottom: 0;
 }
 
+#info-icon {
+  opacity: .7;
+  z-index: 1001;
+}
+
+.info-div {
+  position: absolute;
+  width: 80%;
+  z-index: 1000;
+  padding: 1em;
+  background-color: $lighttext;
+  color: $savvyblue;
+  top: 20%;
+  margin-left: 3.5em;
+  box-shadow: 5px 5px 5px darken($savvyblue, 20%);
+
+}
+
+.hide {
+  display: none;
+}
+
 .savadoro {
   width: 480px;
   height: 560px;
@@ -67,7 +89,7 @@ body {
   .pause-btn {
     color: $darktext;
     padding: 0 1em;
-    z-index: 9999;
+    z-index: 999;
     position: relative;
     &:focus {
       background-color: $darktext;

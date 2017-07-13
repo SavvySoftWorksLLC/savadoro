@@ -27,6 +27,15 @@ $(function(){
     e.preventDefault();
     setDefaults();
   });
+
+  $('#info-icon').on('click', function(){
+    if($('.info-div').hasClass('hide')) {
+      $('.info-div').removeClass('hide');
+    } else if (!$('.info-div').hasClass('hide')) {
+      console.log('interesting...')
+      $('.info-div').addClass('hide');
+    }
+  });
 });
 
 function getSessionInfo() {
