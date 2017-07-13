@@ -1,5 +1,8 @@
 const moment = require('moment');
 
+var currentSession = 1;
+var stage = 1;
+
 $(function(){
 
 	$.getJSON('assets/default.json', function(data) {
@@ -45,23 +48,25 @@ function getSessionInfo() {
 
 function savadoro() {
   var sessionsInfo = getSessionInfo();
-  var sessionLength = sessionsInfo['sessionsNum'];
-  var stage = 1;
-  var currentSession = 1;
-  runTimer()
-
-
-}
-
-function runPomodoro(pomodoroTime) {
-  runTimer(pomodoroTime);
-}
-
-function changeSession(){
-  var currentSession = $("#current-session").val();
-  currentSession = currentSession + 1;
-  var totalSessions = $('#sessions').val();
-  $("#current-session").text(currentSession);
+  var pomodoroLength = sessionsInfo['pomodoro']
+  var shortBreakLength = sessionsInfo['short break']
+  var longBreakLength = sessionsInfo['long break']
+  var sessionLength = sessionsInfo['sessions'];
+  if(stage === 1) {
+    runTimer(pomodoroLength)
+    $("#current-session").text("Pomodoro " + currentSession);
+    stage = 2
+  } else if ((stage === 2) && (currentSession != sessionLength)) {
+    runTimer(shortBreakLength)
+    $("#current-session").text("Short Break " + currentSession);
+    stage = 1
+    currentSession++
+  } else {
+    runTimer(longBreakLength)
+    $("#current-session").text("Long Break");
+    currentSession = 1
+    stage = 1
+  }
 }
 
 function notify() {
