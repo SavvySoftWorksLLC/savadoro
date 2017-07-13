@@ -2,6 +2,7 @@ const moment = require('moment');
 
 var currentSession = 1;
 var stage = 1;
+var notPaused = true;
 
 $(function(){
   setDefaults();
@@ -13,6 +14,13 @@ $(function(){
 
   $("#pause").on('click', function(e){
   	e.preventDefault();
+    if(notPaused == true) {
+      notPaused = false;
+      $('#start').attr('disabled', true);
+    } else {
+      notPaused = true;
+      $('#start').attr('disabled', false);
+    }
   });
 
   $("#reset").on('click', function(e){
@@ -67,24 +75,25 @@ function timer(time) {
   var duration = moment.duration(time)
   var interval = 1
   var countdown = setInterval(function () {
-    duration = moment.duration(duration.asSeconds() - interval, 'seconds');
-    $('#reset').on('click', function() {
-      setDefaults();
-      stopTimer(countdown);
-    });
-    if(duration._milliseconds > -1) {
-      var time = moment(duration._milliseconds).format('mm:ss')
-      $('#current-time').text(time)
-      // $('#current-time').text(Math.round(duration.minutes()) + ':' + Math.round(duration.seconds()))
-    }
-    if(duration._milliseconds === 0) {
-      notify()
-      stopTimer(countdown)
-      $('#current-time').text('00:00')
-
+    if(notPaused == true) {
+      duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+      if(duration._milliseconds > -1) {
+        var time = moment(duration._milliseconds).format('mm:ss')
+        $('#current-time').text(time)
+        // $('#current-time').text(Math.round(duration.minutes()) + ':' + Math.round(duration.seconds()))
+      }
+      if(duration._milliseconds === 0) {
+        notify()
+        stopTimer(countdown)
+        $('#current-time').text('00:00')
+      }
     }
   }, 1000)
   countdown
+  $('#reset').on('click', function() {
+    setDefaults();
+    stopTimer(countdown);
+  });
 }
 
 function runTimer(pomodoro) {
