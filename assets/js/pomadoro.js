@@ -17,9 +17,11 @@ $(function(){
     if(notPaused == true) {
       notPaused = false;
       $('.overlay-div').css('display', 'block');
+      $('#pause-icon').text('play_arrow');
     } else {
       notPaused = true;
       $('.overlay-div').css('display', 'none');
+      $('#pause-icon').text('pause');
     }
   });
 
