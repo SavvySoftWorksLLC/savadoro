@@ -29,6 +29,18 @@ $(function(){
     e.preventDefault();
     setDefaults();
   });
+
+  $('#info-icon').on('click', function(){
+    if($('.info-div').hasClass('hide')) {
+      $('.info-div').removeClass('hide');
+    } else if (!$('.info-div').hasClass('hide')) {
+      $('.info-div').addClass('hide');
+    }
+  });
+
+  $('#info-close').on('click', function(){
+    $('.info-div').addClass('hide');
+  });
 });
 
 function getSessionInfo() {
