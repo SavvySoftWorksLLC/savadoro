@@ -55,9 +55,12 @@ body {
   }
   .savvy-team {
     margin-top: 2.5em;
-    color: $savvyblue;
   }
   h5 {
+    color: $savvyblue;
+  }
+  a {
+    font-size: 1.3em;
     color: $savvyblue;
   }
 }
