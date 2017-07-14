@@ -1,6 +1,6 @@
 {
   "name": "savaldoro_electron",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Savadoro - a Savvy Pomodoro Timer",
   "main": "main.js",
   "scripts": {

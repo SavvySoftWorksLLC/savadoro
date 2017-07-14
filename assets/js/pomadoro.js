@@ -10,6 +10,8 @@ $(function(){
   $('#start').on('click', function(e){
     e.preventDefault();
     savadoro();
+    $('#start').prop("disabled",true);
+    $('#start').addClass('start-disabled');
   });
 
   $("#pause").on('click', function(e){
@@ -83,6 +85,8 @@ function notify() {
 
 function stopTimer(countdown) {
   clearInterval(countdown)
+  $('#start').prop("disabled",false);
+  $('#start').removeClass('start-disabled');
 }
 
 function timer(time) {
@@ -94,7 +98,6 @@ function timer(time) {
       if(duration._milliseconds > -1) {
         var time = moment(duration._milliseconds).format('mm:ss')
         $('#current-time').text(time)
-        // $('#current-time').text(Math.round(duration.minutes()) + ':' + Math.round(duration.seconds()))
       }
       if(duration._milliseconds === 0) {
         notify()
