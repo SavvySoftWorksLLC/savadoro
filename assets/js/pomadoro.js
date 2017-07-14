@@ -35,6 +35,10 @@ $(function(){
       $('.info-div').addClass('hide');
     }
   });
+
+  $('#info-close').on('click', function(){
+    $('.info-div').addClass('hide');
+  });
 });
 
 function getSessionInfo() {

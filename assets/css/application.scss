@@ -42,15 +42,26 @@ body {
   z-index: 1000;
   padding: 1em;
   background-color: $lighttext;
-  color: $savvyblue;
+  color: $darktext;
   top: 20%;
   margin-left: 3.5em;
   box-shadow: 5px 5px 5px darken($savvyblue, 20%);
-  font-size: .85em;
+  font-size: .9em;
   margin-bottom: 1em;
+  #info-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+  .savvy-team {
+    margin-top: 2.5em;
+    color: $savvyblue;
+  }
+  h5 {
+    color: $savvyblue;
+  }
 }
 
-}
 
 .hide {
   display: none;
