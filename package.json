@@ -1,47 +1,35 @@
 {
-  "name": "savaldoro_electron",
+  "name": "savadoro_electron_copy",
+  "productName": "savadoro_electron_copy",
   "version": "0.1.0",
-  "description": "Savadoro - a Savvy Pomodoro Timer",
-  "main": "src/main.js",
+  "description": "My Electron application description",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "lint": "eslint src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:SavvySoftWorksLLC/savadoro_electron.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron-compile": "^6.4.1",
-    "moment": "^2.18.1"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "electron-prebuilt-compile": "1.6.11"
-  },
+  "keywords": [],
+  "author": "garyanewsome",
+  "license": "MIT",
   "config": {
     "forge": {
-      "make_targets": {
-        "win32": [
-          "squirrel"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "deb",
-          "rpm"
-        ]
-      },
+        "make_targets": {
+            "win32": [
+                "squirrel"
+            ],
+            "darwin": [
+                "zip"
+            ],
+            "linux": [
+                "deb",
+                "rpm"
+            ]
+    },
       "electronPackagerConfig": {},
       "electronWinstallerConfig": {
-        "name": ""
+        "name": "savadoro_electron_copy"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
@@ -50,8 +38,24 @@
         "name": ""
       },
       "windowsStoreConfig": {
-        "packageName": ""
+        "packageName": "",
+        "name": "savadoro_electron_copy"
       }
-    }
+  }
+},
+  "dependencies": {
+    "electron-compile": "^6.4.1",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-prebuilt-compile": "1.6.11",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
   }
 }
