@@ -123,12 +123,17 @@ function runTimer(pomodoro) {
 }
 
 function setDefaults() {
-  $.getJSON('assets/default.json', function(data) {
-    for(var i in data) {
-      $('input[name="'+ i +'"]').val(data[i]);
-    }
-    $("#current-time").text('0:00');
-    $("#current-session").text('0');
-    window.onchange=getSessionInfo;
-  });
-}
+  var sessionData = {
+    "pomodoro": 25,
+    "short-break": 5,
+    "sessions": 4,
+    "long-break": 15
+  }
+  for(var i in sessionData) {
+    $('input[name="'+ i +'"]').val(sessionData[i]);
+  }
+  $("#current-time").text('0:00');
+  $("#current-session").text('N/A');
+  window.onchange=getSessionInfo;
+};
+

@@ -1,8 +1,8 @@
 {
-  "name": "savadoro_electron_copy",
-  "productName": "savadoro_electron_copy",
+  "name": "savadoro_electron",
+  "productName": "Savadoro",
   "version": "0.1.0",
-  "description": "My Electron application description",
+  "description": "Pomodoro Timer by SavvySoftWorks",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -15,18 +15,18 @@
   "license": "MIT",
   "config": {
     "forge": {
-        "make_targets": {
-            "win32": [
-                "squirrel"
-            ],
-            "darwin": [
-                "zip"
-            ],
-            "linux": [
-                "deb",
-                "rpm"
-            ]
-    },
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
       "electronPackagerConfig": {},
       "electronWinstallerConfig": {
         "name": "savadoro_electron_copy"
@@ -41,9 +41,10 @@
         "packageName": "",
         "name": "savadoro_electron_copy"
       }
-  }
-},
+    }
+  },
   "dependencies": {
+    "babel-runtime": "^6.23.0",
     "electron-compile": "^6.4.1",
     "moment": "^2.18.1"
   },
