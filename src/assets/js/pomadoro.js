@@ -40,6 +40,11 @@ $(function(){
     stage = 1
   });
 
+  $("#clear").on('click', function(e){
+    e.preventDefault();
+    setDefaults();
+  })
+
   $('#info-icon').on('click', function(){
     if($('.info-div').hasClass('hide')) {
       $('.info-div').removeClass('hide');
@@ -50,6 +55,18 @@ $(function(){
 
   $('#info-close').on('click', function(){
     $('.info-div').addClass('hide');
+  });
+
+  $('#settings-icon').on('click', function(){
+    if($('.settings-div').hasClass('hide')) {
+      $('.settings-div').removeClass('hide');
+    } else if (!$('.settings-div').hasClass('hide')) {
+      $('.settings-div').addClass('hide');
+    }
+  });
+
+  $('#settings-close').on('click', function(){
+    $('.settings-div').addClass('hide');
   });
 });
 
