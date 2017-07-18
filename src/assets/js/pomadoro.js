@@ -30,6 +30,8 @@ $(function(){
   $("#reset").on('click', function(e){
     e.preventDefault();
     setDefaults();
+    currentSession = 1
+    stage = 1
   });
 
   $('#info-icon').on('click', function(){

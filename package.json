@@ -10,8 +10,12 @@
     "make": "electron-forge make",
     "lint": "eslint src"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:SavvySoftWorksLLC/savadoro_electron.git"
+  },
   "keywords": [],
-  "author": "garyanewsome",
+  "author": "garyanewsome, arevyn24",
   "license": "MIT",
   "config": {
     "forge": {
@@ -29,17 +33,17 @@
       },
       "electronPackagerConfig": {},
       "electronWinstallerConfig": {
-        "name": "savadoro_electron_copy"
+        "name": "savadoro_electron"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "SavvySoftWorksLLC",
+        "name": "savadoro_electron"
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "savadoro_electron_copy"
+        "name": "savadoro_electron"
       }
     }
   },
