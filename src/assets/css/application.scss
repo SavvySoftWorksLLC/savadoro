@@ -1,5 +1,19 @@
 @import url("materialize.min.css");
 
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../fonts/philosopher/Philosopher-Regular.ttf'),
+       url('../fonts/philosopher/Philosopher-Bold.ttf'),
+       url('../fonts/philosopher/Philosopher-BoldItalic.ttf'),
+       url('../fonts/philosopher/Philosopher-Italic.ttf')
+}
+
+@font-face {
+  font-family: 'PT-Mono';
+  src: url('../fonts/pt-mono/PTM55F.ttf'),
+       url('../fonts/pt-mono/PTM75F.ttf')
+}
+
 $savvyblue: #418BC4;
 $darktext: #333333;
 $lighttext: #F5F5F5;
@@ -169,6 +183,6 @@ body {
 
   #current-time {
     margin: auto auto;
-    font-family: 'Numans', sans-serif;
+    font-family: 'PT-Mono', monospace;
   }
 }
