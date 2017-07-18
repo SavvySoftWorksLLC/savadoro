@@ -7,6 +7,12 @@ var notPaused = true;
 $(function(){
   setDefaults();
 
+  $('#start-app').on('click', function(){
+    if(!$('.start-overlay-div').hasClass('hide')){
+      $('.start-overlay-div').addClass('hide');
+    }
+  });
+
   $('#start').on('click', function(e){
     e.preventDefault();
     savadoro();

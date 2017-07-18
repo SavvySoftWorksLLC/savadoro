@@ -28,9 +28,19 @@ body {
   color: $lighttext;
 }
 
+.start-overlay-div {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1001;
+  position: absolute;
+  top: 0;
+  left:0;
+  background-color: darken($savvyblue, 20%);
+}
+
 .container {
   margin: 0 auto;
-  width: 90%;
 }
 
 .overlay-div {
@@ -92,8 +102,7 @@ body {
 
   width: 480px;
   height: 608px;
-
-  background: radial-gradient(172.00px at 50% 73.51%, #F5F5F5 0%, rgba(245, 245, 245, 0) 100%);
+  //background: radial-gradient(172.00px at 50% 73.51%, #F5F5F5 0%, rgba(245, 245, 245, 0) 100%);
 
   .savadoro--title {
     font-family: 'Philosopher', sans-serif;
@@ -171,13 +180,11 @@ body {
     border-radius: 50%;
     /* Ellipse */
     margin: auto auto;
-    padding: 2em;
-    width: 240px;
-    height: 160px;
-    // color: #333333;
-    color: darken($savvyblue, 20%);
-    background: $lighttext;
-    border: 2px $savvyblue;
+    padding: 1em;
+    width: 190px;
+    height: 190px;
+    color: $lighttext;
+    border: 5px solid $lighttext;
     box-sizing: border-box;
   }
 

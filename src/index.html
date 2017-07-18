@@ -10,39 +10,46 @@
   </head>
   <body>
     <i id="info-icon" class="material-icons right">info_outline</i>
-      <div class="hide info-div container">
-        <i id="info-close" class="material-icons tiny">close</i>
-        <h5>About</h5>
-        Savadoro is a take on the Pomodoro Timer that gives you insightful data about your work flow.
+    <div class="hide info-div container">
+      <i id="info-close" class="material-icons tiny">close</i>
+      <h5>About</h5>
+      Savadoro is a take on the Pomodoro Timer that gives you insightful data about your work flow.
 
-        Use the default setting, or enter your own times (in minutes) to create a timer that feels comfortable for you. The timer will help you stay on task while you work and notify you when it's time for a break.
+      Use the default setting, or enter your own times (in minutes) to create a timer that feels comfortable for you. The timer will help you stay on task while you work and notify you when it's time for a break.
 
-        <h5>Examples</h5>
-        A Pomodoro timer typically has 4 sessions with 25 minute work periods, separated by short 3-5 minute breaks and finally a longer 15 minute break at the end.
-        <ol>
-          <li>Work: 25 min / Break: 5 min</li>
-          <li>Work: 25 min / Break: 5 min</li>
-          <li>Work: 25 min / Break: 5 min</li>
-          <li>Work: 25 min / Break: 15 min</li>
-        </ol>
+      <h5>Examples</h5>
+      A Pomodoro timer typically has 4 sessions with 25 minute work periods, separated by short 3-5 minute breaks and finally a longer 15 minute break at the end.
+      <ol>
+        <li>Work: 25 min / Break: 5 min</li>
+        <li>Work: 25 min / Break: 5 min</li>
+        <li>Work: 25 min / Break: 5 min</li>
+        <li>Work: 25 min / Break: 15 min</li>
+      </ol>
 
-        However, you can edit this any way you'd like. Here's one more example: 2 sessions with a 50 minute work period, a 10 minute short break, and 20 minute long break.<br>
+      However, you can edit this any way you'd like. Here's one more example: 2 sessions with a 50 minute work period, a 10 minute short break, and 20 minute long break.<br>
 
-        <ol>
-          <li>Work: 50 min / Break: 10 min</li>
-          <li>Work: 50 min / Break: 20 min</li>
-        </ol>
-        <div class="savvy-team center">
-          Savadoro Timer was created in 2017 by Gary Newsome, Samantha Shurie, and Paul Scarrone of SavvySoftWorks.
-          <br>
-          <a href="http://savvysoftworks.com" target="blank">SavvySoftWorks.com</a>
-        </div>
-
+      <ol>
+        <li>Work: 50 min / Break: 10 min</li>
+        <li>Work: 50 min / Break: 20 min</li>
+      </ol>
+      <div class="savvy-team center">
+        Savadoro Timer was created in 2017 by Gary Newsome, Samantha Shurie, and Paul Scarrone of SavvySoftWorks.
+        <br>
+        <a href="http://savvysoftworks.com" target="blank">SavvySoftWorks.com</a>
       </div>
+    </div>
     <div class="savadoro">
+      <div class="start-overlay-div">
+        <h1 class="savadoro--title">Savadoro</h1>
+        <div class="row">
+          <div class="timer center">
+            <h1 id="start-app">Start</h1>
+          </div>
+          <i class="material-icons center">play_for_work</i>
+        </div>
+      </div>
       <div class="overlay-div"></div>
       <div class="container">
-        <h1 class="savadoro--title">Savadoro</h1>
           <form>
             <div class="session-input">
               <div class="row">
@@ -80,10 +87,10 @@
             <div class="valign-wrapper timer center">
               <h1 id="current-time"></h1>
             </div>
+            <i class="material-icons center">play_for_work</i>
           </div>
         </div>
       </div>
-    </div>
   </body>
   <script src="assets/js/pomadoro.js"></script>
 </html>
