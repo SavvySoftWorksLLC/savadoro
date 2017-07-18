@@ -96,13 +96,6 @@
         </div>
       </div>
       <div class="overlay-div"></div>
-      <div class="container">
-          <form>
-            <div class="btn-group center">
-              <button type="submit" class="start-btn center" id="start">Start</button>
-            </div>
-          </form>
-        </div>
         <div class="timer-backdrop">
           <div class="center current">
             <div class="savadoro--progress-container progress">
@@ -110,12 +103,21 @@
             </div>
             Current Session: <span id="current-session"></span>
           </div>
-          <div class="row">
-            <div class="valign-wrapper timer center">
-              <h1 id="current-time"></h1>
+          <div class="timer-container">
+            <div class="timer center">
+              <div class="timer-contents">
+                <h1 id="current-time" class="center"></h1>
+                <a class="pause-text">Press to Pause</a>
+              </div>
             </div>
+
             <i class="material-icons center">play_for_work</i>
           </div>
+        </div>
+      </div>
+      <div class="pause-overlay-div hide">
+        <div class="pause-container">
+          <img id="pause-app" src="./assets/images/pause.svg">
         </div>
       </div>
   </body>

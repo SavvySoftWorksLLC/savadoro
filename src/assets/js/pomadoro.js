@@ -9,28 +9,26 @@ $(function(){
   setDefaults();
 
   $('#start-app').on('click', function(){
-    if(!$('.start-overlay-div').hasClass('hide')){
-      $('.start-overlay-div').addClass('hide');
-    }
-  });
-
-  $('#start').on('click', function(e){
-    e.preventDefault();
+    $('.start-overlay-div').addClass('hide');
     savadoro();
-    $('#start').prop("disabled",true);
-    $('#start').addClass('start-disabled');
   });
 
-  $("#pause").on('click', function(e){
+  $('#pause-app').on('click', function() {
+    notPaused = true;
+    $('.pause-overlay-div').addClass('hide');
+
+  });
+
+  $(".timer").on('click', function(e){
   	e.preventDefault();
     if(notPaused == true) {
       notPaused = false;
-      $('.overlay-div').css('display', 'block');
-      $('#pause-icon').text('play_arrow');
+      $('.pause-overlay-div').removeClass('hide');
+      console.log('butts');
     } else {
       notPaused = true;
-      $('.overlay-div').css('display', 'none');
-      $('#pause-icon').text('pause');
+      $('.pause-overlay-div').addClass('hide');
+      console.log('feets');
     }
   });
 
