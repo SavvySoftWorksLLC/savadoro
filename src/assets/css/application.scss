@@ -72,7 +72,7 @@ button {
   background-color: $lighttext;
   color: $darktext;
   border-radius: 50%;
-  padding: 0 2em;
+  padding: .5em 2em;
 }
 
 .overlay-div {
@@ -88,7 +88,7 @@ button {
   bottom: 0;
 }
 
-#info-icon {
+#icon-row {
   opacity: .7;
   z-index: 1001;
   position: relative;
@@ -97,13 +97,13 @@ button {
 
 .info-div {
   position: absolute;
-  width: 80%;
+  width: 90%;
   z-index: 1005;
   padding: 1em;
   background-color: $lighttext;
   color: $darktext;
   top: 20%;
-  margin-left: 3.5em;
+  margin-left: 1em;
   box-shadow: 5px 5px 5px darken($savvyblue, 20%);
   font-size: .9em;
   margin-bottom: 1em;
@@ -114,6 +114,7 @@ button {
     top: 1em;
     right: 1em;
   }
+
   .savvy-team {
     margin-top: 2.5em;
   }
@@ -126,68 +127,55 @@ button {
   }
 }
 
+.settings-div {
+  position: absolute;
+  width: 90%;
+  z-index: 1001;
+  padding: 1em;
+  background-color: $lighttext;
+  color: $darktext;
+  top: 20%;
+  margin-left: 1em;
+  box-shadow: 5px 5px 5px darken($savvyblue, 20%);
+  font-size: .9em;
+  margin-bottom: 1em;
+  height: 70%;
+  overflow: scroll;
+  #settings-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+  .session-input {
+    margin-left: 1em;
+    font-size: 1em;
+  }
+  input[type="text"], input[type="number"] {
+    height: 2em;
+    width: 4em;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: $darktext;
+    text-align: right;
+  }
+  .clear-btn {
+    color: $reset;
+    &:focus, &:active, &:hover{
+      background-color: $lighttext;
+      color: lighten($reset, 5%);
+    }
+  }
+}
+
 .hide {
   display: none;
 }
 
 .savadoro {
 
-  .session-input {
-    margin-left: 2em;
-    font-size: 1.25em;
-  }
-  input[type="text"], input[type="number"] {
-    height: 2em;
-    width: 4em;
-    background-color: $lighttext;
-    color: $darktext;
-    text-align: right;
-  }
-  input {
-  }
-  .btn-group {
-    font-size: 2em;
-    height: 46px;
-  }
-
-  .start-btn {
-    background-color: $lighttext;
-    color: $start;
-    padding: 0 1.7em;
-    height:100%;
-    &:focus, &:active, &:hover{
-      background-color: $btnhover;
-      color: $start;
-    }
-  }
-
-  .start-disabled {
-    background-color: darken($lighttext, 15%);
-    color: lighten($start, 15%);
-  }
-
-  .pause-btn {
-    background-color: $lighttext;
-    color: $darktext;
-    padding: 0 1em;
-    z-index: 999;
-    position: relative;
-    height: 100%;
-    &:focus, &:active, &:hover{
-      background-color: $btnhover;
-      color: $darktext;
-    }
-  }
-
-  .reset-btn {
-    background-color: $lighttext;
-    color: $reset;
-    padding: 0 1.7em;
-    height: 100%;
-    &:focus, &:active, &:hover{
-      background-color: $btnhover;
-      color: $reset;
-    }
+  .savadoro--title {
+    font-family: 'Philosopher', sans-serif;
+    text-align: center;
   }
 
   .current {
