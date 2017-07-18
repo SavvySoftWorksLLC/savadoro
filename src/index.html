@@ -40,41 +40,23 @@
     </div>
     <div class="savadoro">
       <div class="start-overlay-div">
-        <h1 class="savadoro--title">Savadoro</h1>
-        <div class="row">
-          <div class="timer center">
-            <h1 id="start-app">Start</h1>
-          </div>
-          <i class="material-icons center">play_for_work</i>
+        <div>
+        </div>
+        <div class="title-div">
+          <h1 class="savadoro--title">Savadoro</h1>
+        </div>
+        <div class="start-div center">
+          <img src="./assets/images/play_button.svg" id="start-app" >
+        </div>
+        <div class="settings center">
+          <button class="center" id="settings">Settings</button>
         </div>
       </div>
       <div class="overlay-div"></div>
       <div class="container">
           <form>
-            <div class="session-input">
-              <div class="row">
-                <div class="col s6">
-                  <input type="number" id="pomodoro" name="pomodoro" class=" browser-default"> Pomodoro
-                </div>
-                <div class="col s6">
-                  <input type="number" id="short-break" name="short-break" class="browser-default"> Short Break
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s6">
-                  <input type="number" id="sessions" name="sessions" class=" browser-default"> Sessions
-                </div>
-                <div class="col s6">
-                  <input type="number" id="long-break" name="long-break" class="browser-default"> Long Break
-                </div>
-              </div>
-            </div>
             <div class="btn-group center">
-              <button type="submit" class="start-btn left" id="start">Start</button>
-              <button id="pause" class="pause-btn center">
-                <i id="pause-icon" class="material-icons small valign-wrapper">pause</i>
-              </button>
-              <button type="reset" id="reset" class="reset-btn right">Reset</button>
+              <button type="submit" class="start-btn center" id="start">Start</button>
             </div>
           </form>
         </div>
@@ -88,6 +70,23 @@
               <h1 id="current-time"></h1>
             </div>
             <i class="material-icons center">play_for_work</i>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col s6">
+            <input type="number" id="pomodoro" name="pomodoro" class=" browser-default"> Pomodoro
+          </div>
+          <div class="col s6">
+            <input type="number" id="short-break" name="short-break" class="browser-default"> Short Break
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <input type="number" id="sessions" name="sessions" class=" browser-default"> Sessions
+          </div>
+          <div class="col s6">
+            <input type="number" id="long-break" name="long-break" class="browser-default"> Long Break
           </div>
         </div>
       </div>
