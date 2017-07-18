@@ -86,13 +86,21 @@ function savadoro() {
   var shortBreakLength = sessionsInfo['short break']
   var longBreakLength = sessionsInfo['long break']
   var sessionLength = sessionsInfo['sessions'];
+
+  var progressBarTotal = (pomodoroLength * sessionLength) + (shortBreakLength * (sessionLength - 1))
+  var currentProgress = 0
+
   if(stage === 1) {
     runTimer(pomodoroLength)
     $("#current-session").text("Pomodoro " + currentSession);
+    currentProgress += pomodoroLength
+    progressBar(currentProgress, progressBarTotal)
     stage = 2
   } else if ((stage === 2) && (currentSession != sessionLength)) {
     runTimer(shortBreakLength)
     $("#current-session").text("Short Break " + currentSession);
+    currentProgress += shortBreakLength
+    progressBar(currentProgress, progressBarTotal)
     stage = 1
     currentSession++
   } else {
@@ -101,6 +109,11 @@ function savadoro() {
     currentSession = 1
     stage = 1
   }
+}
+
+function progressBar(currentProgress, progressBarTotal) {
+  var current = Math.round(currentProgress/progressBarTotal*100) + "px"
+  $('.savadoro--progress').css('width', current)
 }
 
 function notify() {
@@ -161,4 +174,3 @@ function setDefaults() {
   $("#current-session").text('N/A');
   window.onchange=getSessionInfo;
 };
-

@@ -15,10 +15,9 @@
 }
 
 $savvyblue: #418BC4;
+$savvyoverlay: darken($savvyblue, 20%);
 $darktext: #333333;
 $lighttext: #F5F5F5;
-
-$btnhover: #F5F5FF;
 
 $start: #388659;
 $reset: #E94F37;
@@ -202,5 +201,14 @@ button {
   #current-time {
     margin: auto auto;
     font-family: 'PT-Mono', monospace;
+  }
+
+  .savadoro--progress-container {
+    margin: 0 auto;
+    width: 90%;
+    background-color: $lighttext;
+  }
+  .savadoro--progress {
+    background-color: $savvyoverlay;
   }
 }
