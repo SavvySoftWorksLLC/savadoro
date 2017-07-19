@@ -3,6 +3,7 @@ const moment = require('moment');
 var currentSession = 1;
 var stage = 1;
 var notPaused = true;
+var currentProgress = 0;
 
 $(function(){
   setDefaults();
@@ -86,12 +87,20 @@ function savadoro() {
   var shortBreakLength = sessionsInfo['short break']
   var longBreakLength = sessionsInfo['long break']
   var sessionLength = sessionsInfo['sessions'];
+
+  var progressBarTotal = (pomodoroLength * sessionLength) + (shortBreakLength * (sessionLength - 1))
+  console.log(pomodoroLength * sessionLength)
+  console.log(shortBreakLength * (sessionLength -1))
+  console.log(progressBarTotal)
+
   if(stage === 1) {
     runTimer(pomodoroLength)
+    progressBar(pomodoroLength, progressBarTotal)
     $("#current-session").text("Pomodoro " + currentSession);
     stage = 2
   } else if ((stage === 2) && (currentSession != sessionLength)) {
     runTimer(shortBreakLength)
+    progressBar(shortBreakLength, progressBarTotal)
     $("#current-session").text("Short Break " + currentSession);
     stage = 1
     currentSession++
@@ -101,6 +110,13 @@ function savadoro() {
     currentSession = 1
     stage = 1
   }
+}
+
+function progressBar(time, progressBarTotal) {
+  currentProgress = currentProgress + parseFloat(time)
+  var current = Math.round((currentProgress/progressBarTotal)*100) + "%"
+  console.log(current)
+  $('.savadoro--progress').css('width', current)
 }
 
 function notify() {
@@ -161,4 +177,3 @@ function setDefaults() {
   $("#current-session").text('N/A');
   window.onchange=getSessionInfo;
 };
-
