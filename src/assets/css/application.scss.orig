@@ -15,19 +15,16 @@
 }
 
 $savvyblue: #418BC4;
-$savvyoverlay: darken($savvyblue, 20%);
 $darktext: #333333;
 $lighttext: #F5F5F5;
+
+$btnhover: #F5F5FF;
 
 $start: #388659;
 $reset: #E94F37;
 
 body {
   background-color: $savvyblue;
-  color: $lighttext;
-}
-
-.material-icons {
   color: $lighttext;
 }
 
@@ -40,6 +37,19 @@ body {
   top: 0;
   left:0;
   background-color: darken($savvyblue, 20%);
+  .title-div {
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    //margin: 0 auto;
+    width: 100%;
+    .savadoro--title {
+      font-family: 'Philosopher', sans-serif;
+      text-align: center;
+      margin: unset;
+      font-size: 2em;
+    }
+  }
   .settings {
     position: absolute;
     bottom: 20px;
@@ -56,55 +66,13 @@ body {
     width: 100%;
     text-align: center;
   }
-  #start-app {
-    height: 200px;
-    width: 200px;
-  }
 }
 
-.title-div {
-  margin-bottom: 20px;
-  position: absolute;
-  top: 30px;
-  //margin: 0 auto;
-  width: 100%;
-  .savadoro--title {
-    font-family: 'Philosopher', sans-serif;
-    text-align: center;
-    margin: unset;
-    font-size: 2em;
-  }
-}
-
-.pause-overlay-div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background-color: darken($savvyblue, 20%);
-  .pause-container {
-    position: absolute;
-    top: 90px;
-    width: 100%;
-    text-align: center;
-  }
-  #pause-app {
-    text-align: center;
-    height: 200px;
-    width: 200px;
-  }
-}
-
-.settings-button {
+button {
   background-color: $lighttext;
   color: $darktext;
   border-radius: 50%;
-  padding: .5em 2em;
-  &:focus, &:active, &:hover{
-    background-color: $lighttext;
-  }
+  padding: 0 2em;
 }
 
 .overlay-div {
@@ -122,20 +90,20 @@ body {
 
 #icon-row {
   opacity: .7;
-  z-index: 1002;
+  z-index: 1001;
   position: relative;
   margin-right: 10px;
 }
 
 .info-div {
   position: absolute;
-  width: 90%;
+  width: 80%;
   z-index: 1005;
   padding: 1em;
   background-color: $lighttext;
   color: $darktext;
   top: 20%;
-  margin-left: 1em;
+  margin-left: 3.5em;
   box-shadow: 5px 5px 5px darken($savvyblue, 20%);
   font-size: .9em;
   margin-bottom: 1em;
@@ -159,28 +127,37 @@ body {
   }
 }
 
+<<<<<<< 5d8b3d40abbe88815269df0ae979948218c59e55
+.hide {
+  display: none;
+}
+
+.savadoro {
+
+=======
 .settings-div {
   position: absolute;
-  width: 90%;
-  z-index: 1001;
+  width: 80%;
+  z-index: 1000;
   padding: 1em;
   background-color: $lighttext;
   color: $darktext;
   top: 20%;
-  margin-left: 1em;
+  margin-left: 3.5em;
   box-shadow: 5px 5px 5px darken($savvyblue, 20%);
   font-size: .9em;
   margin-bottom: 1em;
   height: 70%;
-  overflow: scroll;
+  // overflow: scroll;
   #settings-close {
     position: absolute;
     top: 1em;
     right: 1em;
   }
+>>>>>>> Move settings to an overlay panel
   .session-input {
-    margin-left: 1em;
-    font-size: 1em;
+    margin-left: 2em;
+    font-size: 1.25em;
   }
   input[type="text"], input[type="number"] {
     height: 2em;
@@ -204,7 +181,6 @@ body {
 }
 
 .savadoro {
-  overflow: hidden;
 
   .savadoro--title {
     font-family: 'Philosopher', sans-serif;
@@ -215,67 +191,25 @@ body {
     font-size: 1.3em;
   }
 
-  .timer-container {
-    position: absolute;
-    top: 90px;
+  .timer-backdrop {
+    padding-bottom: 2em;
+  }
+
+  .timer {
+    border-radius: 50%;
+    /* Ellipse */
+    margin: 0 auto 10px;
+    padding: 1em;
+    width: 200px;
+    height: 200px;
+    color: $lighttext;
     text-align: center;
-    width: 100%;
-    .timer {
-      border-radius: 50%;
-      /* Ellipse */
-      margin: 0 auto 10px;
-      width: 200px;
-      height: 200px;
-      color: $lighttext;
-      text-align: center;
-      border: 6px solid $lighttext;
-      box-sizing: border-box;
-    }
-    .timer-contents {
-      position: relative;
-      top: 60px;
-    }
-    .pause-text {
-      color: $lighttext;
-    }
+    border: 5px solid $lighttext;
+    box-sizing: border-box;
   }
 
   #current-time {
-    //margin: auto auto;
+    margin: auto auto;
     font-family: 'PT-Mono', monospace;
-    margin: unset;
   }
-
-  #pause {
-    color: $lighttext;
-  }
-
-  .savadoro--progress-container {
-    margin: 0 auto;
-    width: 90%;
-    background-color: $lighttext;
-  }
-  .savadoro--progress {
-    background-color: $savvyoverlay;
-  }
-}
-
-#options {
-  margin-top: 400px;
-  padding: 1em;
-  height: 400px;
-}
-.options{
-  background-color: $savvyoverlay;
-  .options-buttons {
-    margin-top: 1em;
-    background-color: $lighttext;
-    color: $darktext;
-    border-radius: 8px;
-    width:80%;
-    &:focus, &:active, &:hover{
-      background-color: $lighttext;
-    }
-  }
-  .options-return { }
 }

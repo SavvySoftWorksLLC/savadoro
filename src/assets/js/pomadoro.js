@@ -4,6 +4,7 @@ var currentSession = 1;
 var stage = 1;
 var notPaused = true;
 var currentProgress = 0;
+var restartMeUp = { };
 
 $(function(){
   setDefaults();
@@ -16,7 +17,12 @@ $(function(){
   $('#pause-app').on('click', function() {
     notPaused = true;
     $('.pause-overlay-div').addClass('hide');
+  });
 
+  $('#pause-current').on('click', function() {
+    notPaused = false;
+    $('.pause-overlay-div').removeClass('hide');
+    optionsReturn()
   });
 
   $(".timer").on('click', function(e){
@@ -24,11 +30,9 @@ $(function(){
     if(notPaused == true) {
       notPaused = false;
       $('.pause-overlay-div').removeClass('hide');
-      console.log('butts');
     } else {
       notPaused = true;
       $('.pause-overlay-div').addClass('hide');
-      console.log('feets');
     }
   });
 
@@ -87,21 +91,20 @@ function savadoro() {
   var sessionLength = sessionsInfo['sessions'];
 
   var progressBarTotal = (pomodoroLength * sessionLength) + (shortBreakLength * (sessionLength - 1))
-  console.log(pomodoroLength * sessionLength)
-  console.log(shortBreakLength * (sessionLength -1))
-  console.log(progressBarTotal)
 
   if(stage === 1) {
     runTimer(pomodoroLength)
     progressBar(pomodoroLength, progressBarTotal)
     $("#current-session").text("Pomodoro " + currentSession);
     stage = 2
+    restartInfo(pomodoroLength, currentSession, stage)
   } else if ((stage === 2) && (currentSession != sessionLength)) {
     runTimer(shortBreakLength)
     progressBar(shortBreakLength, progressBarTotal)
     $("#current-session").text("Short Break " + currentSession);
     stage = 1
     currentSession++
+    restartInfo(shortBreakLength, currentSession, stage)
   } else {
     runTimer(longBreakLength)
     $("#current-session").text("Long Break");
@@ -110,10 +113,17 @@ function savadoro() {
   }
 }
 
+function restartInfo(time, session, stage) {
+  restartMeUp = {
+    'time': time,
+    'session': session,
+    'stage': stage
+  }
+}
+
 function progressBar(time, progressBarTotal) {
   currentProgress = currentProgress + parseFloat(time)
   var current = Math.round((currentProgress/progressBarTotal)*100) + "%"
-  console.log(current)
   $('.savadoro--progress').css('width', current)
 }
 
@@ -150,6 +160,29 @@ function timer(time) {
     setDefaults();
     stopTimer(countdown);
   });
+
+  $('#restart-current').on('click', function() {
+    stopTimer(countdown)
+    currentSession = restartMeUp['session']
+    stage = restartMeUp['stage']
+    runTimer(restartMeUp['time'])
+    optionsReturn()
+  })
+
+  $('#restart-savadoro').on('click', function() {
+    stopTimer(countdown)
+    currentProgress = 0
+    currentSession = 1
+    stage = 1
+    optionsReturn()
+    $('.start-overlay-div').removeClass('hide')
+  })
+}
+
+function optionsReturn() {
+  $('html, body').stop().animate({
+    scrollTop: $('#top').offset().top
+  }, 1000);
 }
 
 function runTimer(pomodoro) {
@@ -175,3 +208,14 @@ function setDefaults() {
   $("#current-session").text('N/A');
   window.onchange=getSessionInfo;
 };
+
+// jQuery Scroll Animations
+$('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+});
