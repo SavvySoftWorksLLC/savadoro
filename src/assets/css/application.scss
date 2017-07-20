@@ -25,6 +25,8 @@ body {
   background-color: $savvyblue;
   color: $lighttext;
   overflow: hidden;
+  height:800px;
+  max-height: 800px;
 }
 
 .material-icons {
@@ -286,7 +288,7 @@ body {
 }
 
 #options {
-  margin-top: 400px;
+  margin-top: 324px;
   padding: 1em;
   height: 400px;
 }
