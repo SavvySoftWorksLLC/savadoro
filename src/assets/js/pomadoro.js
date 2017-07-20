@@ -41,6 +41,11 @@ $(function(){
     savadoro()
   })
 
+  $('#complete-app').on('click', function(){
+    $('.complete-overlay-div').addClass('hide');
+    $('.start-overlay-div').removeClass('hide');
+  })
+
   $("#reset").on('click', function(e){
     e.preventDefault();
     setDefaults();
