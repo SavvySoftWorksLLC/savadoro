@@ -11,7 +11,6 @@
   <body id="top">
     <div id="icon-row" class="row">
       <i id="info-icon" class="material-icons right">info_outline</i>
-      <i id="settings-icon" class="material-icons right">settings</i>
     </div>
 
     <!-- Info Div -->
@@ -46,7 +45,7 @@
 
     <!-- Settings Div -->
     <div class="hide settings-div container">
-      <i id="settings-close" class="material-icons tiny">close</i>
+      <i class="settings-close material-icons tiny">close</i>
       <form>
         <div class="session-input">
           <div class="row valign-wrapper">
@@ -76,7 +75,8 @@
               <div><small>Coffee break! Get yourself some tea.</small></div>
             </div>
           </div>
-          <button type="reset" id="clear" class="clear-btn left">Clear</button>
+          <button class="settings-close left settings-button">Save</button>
+          <button type="reset" id="clear" class="settings-button right">Clear</button>
         </div>
       </form>
     </div>
