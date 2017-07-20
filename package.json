@@ -1,7 +1,7 @@
 {
   "name": "savadoro_electron",
   "productName": "Savadoro",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Pomodoro Timer by SavvySoftWorks",
   "main": "src/index.js",
   "scripts": {

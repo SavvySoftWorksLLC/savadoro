@@ -25,6 +25,8 @@ body {
   background-color: $savvyblue;
   color: $lighttext;
   overflow: hidden;
+  height:800px;
+  max-height: 800px;
 }
 
 .material-icons {
@@ -42,7 +44,7 @@ body {
 
 .start-overlay-div {
   position: fixed;
-  height: 100%;
+  height: 400px;
   width: 100%;
   z-index: 1000;
   position: absolute;
@@ -52,6 +54,7 @@ body {
   .settings {
     position: absolute;
     bottom: 20px;
+    margin-bottom: 1em;
     text-align: center;
     width: 100%;
   }
@@ -86,7 +89,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 400px;
   z-index: 1000;
   background-color: $savvyoverlay;
   .pause-container {
@@ -198,7 +201,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 400px;
   width: 100%;
   background-color: $savvyoverlay;
   z-index: 1001;
@@ -214,7 +217,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 400px;
   width: 100%;
   background-color: $savvyoverlay;
   z-index: 1001;
@@ -232,6 +235,7 @@ body {
 
 .savadoro {
   overflow: hidden;
+  // background-color: $savvyblue;
 
   .savadoro--title {
     font-family: 'Philosopher', sans-serif;
@@ -286,7 +290,7 @@ body {
 }
 
 #options {
-  margin-top: 400px;
+  margin-top: 324px;
   padding: 1em;
   height: 400px;
 }
