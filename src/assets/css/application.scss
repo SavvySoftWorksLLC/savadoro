@@ -14,8 +14,8 @@
        url('../fonts/pt-mono/PTM75F.ttf')
 }
 
-$savvyblue: #418BC4;
-$savvyoverlay: darken($savvyblue, 20%);
+$savvyblue: darken(#418BC4, 10%);
+$savvyoverlay: darken(#418BC4, 20%);
 $darktext: #333333;
 $lighttext: #F5F5F5;
 
@@ -39,7 +39,7 @@ body {
   position: absolute;
   top: 0;
   left:0;
-  background-color: darken($savvyblue, 20%);
+  background-color: $savvyoverlay;
   .settings {
     position: absolute;
     bottom: 20px;
@@ -83,7 +83,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background-color: darken($savvyblue, 20%);
+  background-color: $savvyoverlay;
   .pause-container {
     position: absolute;
     top: 90px;
@@ -136,7 +136,7 @@ body {
   color: $darktext;
   top: 20%;
   margin-left: 1em;
-  box-shadow: 5px 5px 5px darken($savvyblue, 20%);
+  box-shadow: 5px 5px 5px $savvyoverlay;
   font-size: .9em;
   margin-bottom: 1em;
   height: 70%;
@@ -168,7 +168,7 @@ body {
   color: $darktext;
   top: 20%;
   margin-left: 1em;
-  box-shadow: 5px 5px 5px darken($savvyblue, 20%);
+  box-shadow: 5px 5px 5px $savvyoverlay;
   font-size: .9em;
   margin-bottom: 1em;
   height: 70%;
@@ -211,9 +211,7 @@ body {
     text-align: center;
   }
 
-  .current {
-    font-size: 1.3em;
-  }
+  .current { }
 
   .timer-container {
     position: absolute;
@@ -252,6 +250,7 @@ body {
 
   .savadoro--progress-container {
     margin: 0 auto;
+    margin-bottom: .5em;
     width: 90%;
     background-color: $lighttext;
   }
