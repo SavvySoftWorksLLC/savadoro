@@ -165,6 +165,8 @@ function timer(time, pomodoro) {
         stopTimer(countdown)
         if(isLongBreak) {
           $('.complete-overlay-div').removeClass('hide')
+          isLongBreak = false
+          currentProgress = 0
         } else {
           $('.continue-overlay-div').removeClass('hide')
         }

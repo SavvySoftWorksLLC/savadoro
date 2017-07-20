@@ -17,7 +17,7 @@
 </g>
 </g>
 <g id="Complete!" filter="url(#filter1_d)">
-<use xlink:href="#path3_fill" transform="translate(728 279)" fill="#F5F5F5"/>
+<use xlink:href="#path3_fill" transform="translate(728 274)" fill="#F5F5F5"/>
 </g>
 </g>
 </g>
@@ -31,7 +31,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
-<filter id="filter1_d" filterUnits="userSpaceOnUse" x="726" y="289" width="210" height="51" color-interpolation-filters="sRGB">
+<filter id="filter1_d" filterUnits="userSpaceOnUse" x="726" y="284" width="210" height="51" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
 <feOffset dx="0" dy="4"/>
