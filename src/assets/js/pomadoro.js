@@ -3,6 +3,7 @@ const moment = require('moment');
 var currentSession = 1;
 var stage = 1;
 var notPaused = true;
+var isLongBreak = false;
 var currentProgress = 0;
 var restartMeUp = { };
 
@@ -26,7 +27,6 @@ $(function(){
   });
 
   $(".timer").on('click', function(e){
-  	e.preventDefault();
     if(notPaused == true) {
       notPaused = false;
       $('.pause-overlay-div').removeClass('hide');
@@ -35,6 +35,16 @@ $(function(){
       $('.pause-overlay-div').addClass('hide');
     }
   });
+
+  $('#continue-app').on('click', function(){
+    $('.continue-overlay-div').addClass('hide')
+    savadoro()
+  })
+
+  $('#complete-app').on('click', function(){
+    $('.complete-overlay-div').addClass('hide');
+    $('.start-overlay-div').removeClass('hide');
+  })
 
   $("#reset").on('click', function(e){
     e.preventDefault();
@@ -108,6 +118,7 @@ function savadoro() {
   } else {
     runTimer(longBreakLength)
     $("#current-session").text("Long Break");
+    isLongBreak = true;
     currentSession = 1
     stage = 1
   }
@@ -138,7 +149,7 @@ function stopTimer(countdown) {
   $('#start').removeClass('start-disabled');
 }
 
-function timer(time) {
+function timer(time, pomodoro) {
   var duration = moment.duration(time)
   var interval = 1
   var countdown = setInterval(function () {
@@ -151,6 +162,11 @@ function timer(time) {
       if(duration._milliseconds === 0) {
         notify()
         stopTimer(countdown)
+        if(isLongBreak) {
+          $('.complete-overlay-div').removeClass('hide')
+        } else {
+          $('.continue-overlay-div').removeClass('hide')
+        }
         $('#current-time').text('00:00')
       }
     }
@@ -190,8 +206,8 @@ function runTimer(pomodoro) {
   var pomoForRealDo = pomodoro * 60 * 1000
   var endTime = startTime + pomoForRealDo
   var diff = moment(pomoForRealDo).format("mm:ss")
-  $("#current-time").text(diff);
-  timer(pomoForRealDo)
+  $("#current-time").text(diff)
+  timer(pomoForRealDo, pomodoro)
 }
 
 function setDefaults() {
