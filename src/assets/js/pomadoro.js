@@ -70,7 +70,7 @@ $(function(){
     $('.info-div').addClass('hide');
   });
 
-  $('#settings-icon').on('click', function(){
+  $('#settings').on('click', function(){
     if($('.settings-div').hasClass('hide')) {
       $('.settings-div').removeClass('hide');
     } else if (!$('.settings-div').hasClass('hide')) {
@@ -78,7 +78,8 @@ $(function(){
     }
   });
 
-  $('#settings-close').on('click', function(){
+  $('.settings-close').on('click', function(e){
+    e.preventDefault();
     $('.settings-div').addClass('hide');
   });
 });
