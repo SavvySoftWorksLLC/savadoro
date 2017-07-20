@@ -9,9 +9,8 @@
 }
 
 @font-face {
-  font-family: 'PT-Mono';
-  src: url('../fonts/pt-mono/PTM55F.ttf'),
-       url('../fonts/pt-mono/PTM75F.ttf')
+  font-family: 'digital-7';
+    src: url('../fonts/digital-7/digital-7 (mono).ttf')
 }
 
 $savvyblue: darken(#418BC4, 10%);
@@ -261,7 +260,8 @@ body {
 
   #current-time {
     //margin: auto auto;
-    font-family: 'PT-Mono', monospace;
+    font-family: 'digital-7', monospace;
+    // font-style: monospace;
     margin: unset;
   }
 
