@@ -4,6 +4,8 @@ import { app, BrowserWindow } from 'electron';
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+var path = require('path')
+
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -11,7 +13,8 @@ const createWindow = () => {
     height: 400,
     resizable: false,
     minimizable: false,
-    maximizable: false
+    maximizable: false,
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
   });
 
   // and load the index.html of the app.
