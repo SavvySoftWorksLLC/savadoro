@@ -101,7 +101,7 @@ function savadoro() {
   var longBreakLength = sessionsInfo['long break']
   var sessionLength = sessionsInfo['sessions'];
 
-  var progressBarTotal = (pomodoroLength * sessionLength) + (shortBreakLength * (sessionLength - 1))
+  var progressBarTotal = (pomodoroLength * sessionLength) + (shortBreakLength * (sessionLength))
 
   if(stage === 1) {
     runTimer(pomodoroLength)
@@ -118,6 +118,7 @@ function savadoro() {
     restartInfo(shortBreakLength, currentSession, stage)
   } else {
     runTimer(longBreakLength)
+    progressBar(longBreakLength, progressBarTotal)
     $("#current-session").text("Long Break");
     isLongBreak = true;
     currentSession = 1
