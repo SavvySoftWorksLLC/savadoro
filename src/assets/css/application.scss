@@ -27,6 +27,10 @@ body {
   overflow: hidden;
   height:800px;
   max-height: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .material-icons {
@@ -125,12 +129,12 @@ body {
   padding: 1em;
   background-color: $lighttext;
   color: $darktext;
-  top: 20%;
+  top: 65px;
   margin-left: 1em;
   box-shadow: 5px 5px 5px $savvyoverlay;
   font-size: .9em;
   margin-bottom: 1em;
-  height: 70%;
+  height: 300px;
   overflow: scroll;
   #info-close {
     position: absolute;
@@ -160,12 +164,12 @@ body {
   padding: 1em;
   background-color: $lighttext;
   color: $darktext;
-  top: 20%;
+  top: 65px;
   margin-left: 1em;
   box-shadow: 5px 5px 5px $savvyoverlay;
   font-size: .9em;
   margin-bottom: 1em;
-  height: 70%;
+  height: 300px;
   overflow: scroll;
   .material-icons {
     color: $darktext;
