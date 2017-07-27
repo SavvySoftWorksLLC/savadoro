@@ -95,7 +95,7 @@ function getSessionInfo() {
 }
 
 function savadoro() {
-  var sessionsInfo = getSessionInfo();
+  var sessionsInfo = validateSettingsInput();
   var pomodoroLength = sessionsInfo['pomodoro']
   var shortBreakLength = sessionsInfo['short break']
   var longBreakLength = sessionsInfo['long break']
@@ -238,3 +238,33 @@ $('a[href^="#"]').on('click', function(event) {
         }, 1000);
     }
 });
+
+function validateSettingsInput() {
+  var values = getSessionInfo();
+  console.log(values);
+  for(var setting in values) {
+    if(setting == 'pomodoro' || setting == 'short break' || setting == 'long break') {
+      var validInput = values[setting].match(/\d{1,3}\.\d{1,3}|\d{1,}/);
+      if(validInput !== null) {
+        values[setting] = validInput[0];
+      } else {
+        if(setting == 'pomodoro') {
+          values[setting] = 25;
+        } else if(setting == 'short break') {
+          values[setting] = 5;
+        } else if(setting == 'long break') {
+          values[setting] = 15;
+        }
+      }
+    } else if(setting == 'sessions') {
+      var validInput = values[setting].match(/[1-9]/);
+      if(validInput !== null) {
+        values[setting] = validInput[0];
+      } else {
+        values[setting] = 4;
+      }
+    }
+  }
+  console.log(values);
+  return values;
+};
