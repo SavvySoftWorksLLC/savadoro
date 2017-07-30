@@ -244,7 +244,7 @@ function validateSettingsInput() {
   console.log(values);
   for(var setting in values) {
     if(setting == 'pomodoro' || setting == 'short break' || setting == 'long break') {
-      var validInput = values[setting].match(/\d{1,3}\.\d{1,3}|\d{1,}/);
+      var validInput = values[setting].match(/\d{1,}\.\d{1,}|\.\d{1,}|\d{1,}/);
       if(validInput !== null) {
         values[setting] = validInput[0];
       } else {
