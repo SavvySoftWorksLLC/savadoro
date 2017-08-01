@@ -82,6 +82,11 @@ $(function(){
     e.preventDefault();
     $('.settings-div').addClass('hide');
   });
+
+  $(".input-field").on('focusout', function(){
+    var id = $(this).attr('id');
+    validateSettingsInput(id);
+  })
 });
 
 function getSessionInfo() {
@@ -95,7 +100,7 @@ function getSessionInfo() {
 }
 
 function savadoro() {
-  var sessionsInfo = validateSettingsInput();
+  var sessionsInfo = getSessonInfo();
   var pomodoroLength = sessionsInfo['pomodoro']
   var shortBreakLength = sessionsInfo['short break']
   var longBreakLength = sessionsInfo['long break']
@@ -239,32 +244,23 @@ $('a[href^="#"]').on('click', function(event) {
     }
 });
 
-function validateSettingsInput() {
-  var values = getSessionInfo();
-  console.log(values);
-  for(var setting in values) {
-    if(setting == 'pomodoro' || setting == 'short break' || setting == 'long break') {
-      var validInput = values[setting].match(/\d{1,}\.\d{1,}|\.\d{1,}|\d{1,}/);
-      if(validInput !== null) {
-        values[setting] = validInput[0];
-      } else {
-        if(setting == 'pomodoro') {
-          values[setting] = 25;
-        } else if(setting == 'short break') {
-          values[setting] = 5;
-        } else if(setting == 'long break') {
-          values[setting] = 15;
-        }
+function validateSettingsInput(field) {
+  var value = $('#' + field).val();
+  if(field == 'pomodoro' || field == 'short-break' || field == 'long-break') {
+    if(value < 0 || value.length <= 0) {
+     $('#' + field).addClass('invalid');
+    } else {
+      if($('#' + field).hasClass('invalid')){
+        $('#' + field).removeClass('invalid');
       }
-    } else if(setting == 'sessions') {
-      var validInput = values[setting].match(/[1-9]/);
-      if(validInput !== null) {
-        values[setting] = validInput[0];
-      } else {
-        values[setting] = 4;
+    }
+  } else if(field == 'sessions') {
+    if(value.length <= 0 || !Number.isInteger(parseFloat(value)) || value <= 0) {
+     $('#' + field).addClass('invalid');
+    } else {
+      if($('#' + field).hasClass('invalid')){
+        $('#' + field).removeClass('invalid');
       }
     }
   }
-  console.log(values);
-  return values;
 };
