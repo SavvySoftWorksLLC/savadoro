@@ -251,20 +251,30 @@ function validateSettingsInput(field) {
     if(value < 0 || value.length <= 0) {
      $('#' + field).addClass('invalid');
      $('#save-settings').attr('disabled', 'disabled');
+     $('.settings-close').off();
     } else {
       if($('#' + field).hasClass('invalid')){
         $('#' + field).removeClass('invalid');
         $('#save-settings').removeAttr('disabled');
+        $('.settings-close').on('click', function(e){
+          e.preventDefault();
+          $('.settings-div').addClass('hide');
+        });
       }
     }
   } else if(field == 'sessions') {
     if(value.length <= 0 || !Number.isInteger(parseFloat(value)) || value <= 0) {
      $('#' + field).addClass('invalid');
      $('#save-settings').attr('disabled', 'disabled');
+     $('.settings-close').off();
     } else {
       if($('#' + field).hasClass('invalid')){
         $('#' + field).removeClass('invalid');
         $('#save-settings').removeAttr('disabled');
+        $('.settings-close').on('click', function(e){
+          e.preventDefault();
+          $('.settings-div').addClass('hide');
+        });
       }
     }
   }
