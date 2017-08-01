@@ -250,17 +250,21 @@ function validateSettingsInput(field) {
   if(field == 'pomodoro' || field == 'short-break' || field == 'long-break') {
     if(value < 0 || value.length <= 0) {
      $('#' + field).addClass('invalid');
+     $('#save-settings').attr('disabled', 'disabled');
     } else {
       if($('#' + field).hasClass('invalid')){
         $('#' + field).removeClass('invalid');
+        $('#save-settings').removeAttr('disabled');
       }
     }
   } else if(field == 'sessions') {
     if(value.length <= 0 || !Number.isInteger(parseFloat(value)) || value <= 0) {
      $('#' + field).addClass('invalid');
+     $('#save-settings').attr('disabled', 'disabled');
     } else {
       if($('#' + field).hasClass('invalid')){
         $('#' + field).removeClass('invalid');
+        $('#save-settings').removeAttr('disabled');
       }
     }
   }
