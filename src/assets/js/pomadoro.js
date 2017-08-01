@@ -165,9 +165,10 @@ function timer(time, pomodoro) {
         var time = moment(duration._milliseconds).format('mm:ss')
         $('#current-time').text(time)
       }
-      if(duration._milliseconds === 0) {
+      if(duration._milliseconds < 0) {
         notify()
         stopTimer(countdown)
+        $('#current-time').text('00:00')
         if(isLongBreak) {
           $('.complete-overlay-div').removeClass('hide')
           isLongBreak = false
@@ -175,7 +176,7 @@ function timer(time, pomodoro) {
         } else {
           $('.continue-overlay-div').removeClass('hide')
         }
-        $('#current-time').text('00:00')
+
       }
     }
   }, 1000)
