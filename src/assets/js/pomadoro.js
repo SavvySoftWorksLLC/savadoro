@@ -100,7 +100,7 @@ function getSessionInfo() {
 }
 
 function savadoro() {
-  var sessionsInfo = getSessonInfo();
+  var sessionsInfo = getSessionInfo();
   var pomodoroLength = sessionsInfo['pomodoro']
   var shortBreakLength = sessionsInfo['short break']
   var longBreakLength = sessionsInfo['long break']
