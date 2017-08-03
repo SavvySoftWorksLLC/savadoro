@@ -82,6 +82,11 @@ $(function(){
     e.preventDefault();
     $('.settings-div').addClass('hide');
   });
+
+  $(".input-field").on('focusout', function(){
+    var id = $(this).attr('id');
+    validateSettingsInput(id);
+  })
 });
 
 function getSessionInfo() {
@@ -160,9 +165,10 @@ function timer(time, pomodoro) {
         var time = moment(duration._milliseconds).format('mm:ss')
         $('#current-time').text(time)
       }
-      if(duration._milliseconds === 0) {
+      if(duration._milliseconds < 0) {
         notify()
         stopTimer(countdown)
+        $('#current-time').text('00:00')
         if(isLongBreak) {
           $('.complete-overlay-div').removeClass('hide')
           isLongBreak = false
@@ -170,7 +176,7 @@ function timer(time, pomodoro) {
         } else {
           $('.continue-overlay-div').removeClass('hide')
         }
-        $('#current-time').text('00:00')
+
       }
     }
   }, 1000)
@@ -238,3 +244,38 @@ $('a[href^="#"]').on('click', function(event) {
         }, 1000);
     }
 });
+
+function validateSettingsInput(field) {
+  var value = $('#' + field).val();
+  if(field == 'pomodoro' || field == 'short-break' || field == 'long-break') {
+    if(value < 0 || value.length <= 0) {
+     $('#' + field).addClass('invalid');
+     $('#save-settings').attr('disabled', 'disabled');
+     $('.settings-close').off();
+    } else {
+      if($('#' + field).hasClass('invalid')){
+        $('#' + field).removeClass('invalid');
+        $('#save-settings').removeAttr('disabled');
+        $('.settings-close').on('click', function(e){
+          e.preventDefault();
+          $('.settings-div').addClass('hide');
+        });
+      }
+    }
+  } else if(field == 'sessions') {
+    if(value.length <= 0 || !Number.isInteger(parseFloat(value)) || value <= 0) {
+     $('#' + field).addClass('invalid');
+     $('#save-settings').attr('disabled', 'disabled');
+     $('.settings-close').off();
+    } else {
+      if($('#' + field).hasClass('invalid')){
+        $('#' + field).removeClass('invalid');
+        $('#save-settings').removeAttr('disabled');
+        $('.settings-close').on('click', function(e){
+          e.preventDefault();
+          $('.settings-div').addClass('hide');
+        });
+      }
+    }
+  }
+};

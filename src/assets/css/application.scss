@@ -187,7 +187,6 @@ body {
     height: 2em;
     width: 4em;
     border-radius: 4px;
-    background-color: #FFFFFF;
     color: $darktext;
     text-align: right;
   }
@@ -311,4 +310,12 @@ body {
     }
   }
   .options-return { }
+}
+
+.invalid {
+  background-color: #E7B1D0;
+}
+
+#save-settings:disabled {
+  color: #AAAAAA;
 }
