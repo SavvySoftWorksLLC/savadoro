@@ -1,11 +1,11 @@
 {
   "name": "savadoro",
   "productName": "Savadoro",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Pomodoro Timer by SavvySoftWorks",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "NODE_ENV=DEV electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "lint": "eslint src"
@@ -24,16 +24,21 @@
           "squirrel"
         ],
         "darwin": [
-          "zip"
+          "dmg"
         ],
         "linux": [
           "deb"
         ]
       },
-      "electronPackagerConfig": {},
+      "electronPackagerConfig": {
+        "name": "Savadoro",
+        "icon": "res/icon.icns",
+        "asar": true,
+        "osxSign": true,
+        "quiet": true
+      },
       "electronWinstallerConfig": {
         "name": "Savadoro",
-        "icon": "./src/'assets/icons/png/64x64.png'"
       },
       "electronInstallerDebian": {},
       "github_repository": {
@@ -41,8 +46,8 @@
         "name": "Savadoro"
       },
       "windowsStoreConfig": {
-        "packageName": "",
-        "name": "Savadoro"
+        "packageName": "Savadoro",
+        "name": "savadoro_electron"
       }
     }
   },
