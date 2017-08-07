@@ -1,5 +1,5 @@
 {
-  "name": "savadoro_electron",
+  "name": "savadoro-electron",
   "productName": "Savadoro",
   "version": "0.2.0",
   "description": "Pomodoro Timer by SavvySoftWorks",
@@ -27,23 +27,21 @@
           "zip"
         ],
         "linux": [
-          "deb",
-          "rpm"
+          "deb"
         ]
       },
       "electronPackagerConfig": {},
       "electronWinstallerConfig": {
-        "name": "savadoro_electron"
+        "name": "savadoro-electron"
       },
       "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "SavvySoftWorksLLC",
-        "name": "savadoro_electron"
+        "name": "savadoro-electron"
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "savadoro_electron"
+        "name": "savadoro-electron"
       }
     }
   },
