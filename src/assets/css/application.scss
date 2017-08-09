@@ -42,10 +42,6 @@ body {
   width: 200px;
 }
 
-.material-icons {
-  color: $lighttext;
-}
-
 .start-overlay-div {
   position: fixed;
   height: 400px;
@@ -268,19 +264,19 @@ body {
     }
     .timer-contents {
       position: relative;
-      top: 60px;
+      top: 40px;
     }
     .pause-text {
       color: $lighttext;
+      opacity: 0.7;
     }
+     #current-time {
+      font-family: 'digital-7', monospace;
+      margin: unset;
+    }
+
   }
 
-  #current-time {
-    //margin: auto auto;
-    font-family: 'digital-7', monospace;
-    // font-style: monospace;
-    margin: unset;
-  }
 
   #pause {
     color: $lighttext;
