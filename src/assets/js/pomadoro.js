@@ -70,17 +70,9 @@ $(function(){
     $('.info-div').addClass('hide');
   });
 
-  $('#settings').on('click', function(){
-    if($('.settings-div').hasClass('hide')) {
-      $('.settings-div').removeClass('hide');
-    } else if (!$('.settings-div').hasClass('hide')) {
-      $('.settings-div').addClass('hide');
-    }
-  });
-
-  $('.settings-close').on('click', function(e){
-    e.preventDefault();
-    $('.settings-div').addClass('hide');
+  $('.settings-toggle').on('click', function(e){
+    e.preventDefault()
+    toggleSettings()
   });
 
   $(".input-field").on('focusout', function(){
@@ -251,14 +243,14 @@ function validateSettingsInput(field) {
     if(value < 0 || value.length <= 0) {
      $('#' + field).addClass('invalid');
      $('#save-settings').attr('disabled', 'disabled');
-     $('.settings-close').off();
+     $('.settings-toggle').off();
     } else {
       if($('#' + field).hasClass('invalid')){
         $('#' + field).removeClass('invalid');
         $('#save-settings').removeAttr('disabled');
-        $('.settings-close').on('click', function(e){
+        $('.settings-toggle').on('click', function(e){
           e.preventDefault();
-          $('.settings-div').addClass('hide');
+          toggleSettings();
         });
       }
     }
@@ -266,16 +258,24 @@ function validateSettingsInput(field) {
     if(value.length <= 0 || !Number.isInteger(parseFloat(value)) || value <= 0) {
      $('#' + field).addClass('invalid');
      $('#save-settings').attr('disabled', 'disabled');
-     $('.settings-close').off();
+     $('.settings-toggle').off();
     } else {
       if($('#' + field).hasClass('invalid')){
         $('#' + field).removeClass('invalid');
         $('#save-settings').removeAttr('disabled');
-        $('.settings-close').on('click', function(e){
+        $('.settings-toggle').on('click', function(e){
           e.preventDefault();
-          $('.settings-div').addClass('hide');
+          toggleSettings();
         });
       }
     }
   }
 };
+
+function toggleSettings() {
+ if($('.settings-div').hasClass('hide')) {
+    $('.settings-div').removeClass('hide');
+  } else if (!$('.settings-div').hasClass('hide')) {
+    $('.settings-div').addClass('hide');
+  }
+}

@@ -120,7 +120,12 @@ body {
   position: relative;
   margin-top: 4px;
   margin-right: 8px;
+  .material-icons {
+    float: right;
+    margin: 0 3px;
+  }
 }
+
 
 .info-div {
   position: absolute;
