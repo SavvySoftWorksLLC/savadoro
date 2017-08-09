@@ -38,7 +38,7 @@
         "quiet": true
       },
       "electronWinstallerConfig": {
-        "name": "Savadoro",
+        "name": "Savadoro"
       },
       "electronInstallerDebian": {},
       "github_repository": {
