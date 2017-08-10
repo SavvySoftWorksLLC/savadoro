@@ -77,8 +77,12 @@
               <div><small>Coffee break! Get yourself some tea.</small></div>
             </div>
           </div>
-          <button class="settings-toggle left settings-button" id="save-settings">Save</button>
-          <button type="reset" id="clear" class="settings-button right">Clear</button>
+          <div class='submit-container row'>
+            <div class='settings-button-div'>
+              <i class='material-icons settings-button left settings-toggle' id="save-settings">save</i>
+              <i class='material-icons settings-button right' id='clear'>do_not_disturb</i>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -139,16 +143,17 @@
               <i class="material-icons large center">arrow_drop_up</i>
             </h3>
           </a>
-      <div class="continue-overlay-div hide">
-        <div class="continue-container">
-          <img id='continue-app' src="./assets/images/continue.svg" />
         </div>
-      </div>
-      <div class="complete-overlay-div hide">
-        <div class="complete-container">
-          <img id='complete-app' src="./assets/images/complete.svg" />
+        <div class="continue-overlay-div hide">
+          <div class="continue-container">
+            <img id='continue-app' src="./assets/images/continue.svg" />
+          </div>
         </div>
-      </div>
+        <div class="complete-overlay-div hide">
+          <div class="complete-container">
+            <img id='complete-app' src="./assets/images/complete.svg" />
+          </div>
+        </div>
   </body>
   <script src="assets/js/pomadoro.js"></script>
 </html>

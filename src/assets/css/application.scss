@@ -100,16 +100,6 @@ body {
   }
 }
 
-.settings-button {
-  background-color: $lighttext;
-  color: $darktext;
-  border-radius: 50%;
-  padding: .5em 2em;
-  &:focus, &:active, &:hover{
-    background-color: $lighttext;
-  }
-}
-
 #icon-row {
   opacity: .7;
   z-index: 1002;
@@ -119,6 +109,9 @@ body {
   .material-icons {
     float: right;
     margin: 0 3px;
+    &:focus, &:active, &:hover{
+      cursor: pointer;
+    }
   }
 }
 
@@ -160,25 +153,38 @@ body {
 
 .settings-div {
   position: absolute;
-  width: 90%;
+  width: 88%;
   z-index: 1001;
   padding: 1em;
   background-color: $lighttext;
   color: $darktext;
   top: 65px;
   margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
   box-shadow: 5px 5px 5px $savvyoverlay;
   font-size: .9em;
-  margin-bottom: 1em;
   height: 300px;
   overflow: scroll;
+  .row {
+    margin-bottom: 10px;
+  }
+  .submit-container {
+    margin-top: 15px;
+  }
   .material-icons {
     color: $darktext;
+    margin: 0;
   }
-  #settings-close {
-    position: absolute;
-    top: 1em;
-    right: 1em;
+  .settings-button-div {
+    width: 75px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .settings-toggle, .settings-button {
+    &:focus, &:active, &:hover{
+      cursor: pointer;
+    }
   }
   .session-input {
     margin-left: 1em;
@@ -269,6 +275,7 @@ body {
     .pause-text {
       position: relative;
       top: 12px;
+      left: 5px;
       font-size: 2.1em;
       font-family: 'Anton', sans-serif;
       color: $lighttext;
