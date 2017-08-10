@@ -3,6 +3,7 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Savadoro</title>
 
@@ -11,7 +12,8 @@
   </head>
   <body id="top">
     <div id="icon-row" class="row">
-      <i id="info-icon" class="material-icons right">info_outline</i>
+    <i id="settings" class="material-icons settings-toggle">settings</i>
+      <i id="info-icon" class="material-icons">info_outline</i>
     </div>
 
     <!-- Info Div -->
@@ -46,7 +48,7 @@
 
     <!-- Settings Div -->
     <div class="hide settings-div container">
-      <i class="settings-close material-icons tiny right">close</i>
+      <i class="settings-toggle material-icons tiny right">close</i>
       <form>
         <div class="session-input">
           <div class="row valign-wrapper">
@@ -76,8 +78,12 @@
               <div><small>Coffee break! Get yourself some tea.</small></div>
             </div>
           </div>
-          <button class="settings-close left settings-button" id="save-settings">Save</button>
-          <button type="reset" id="clear" class="settings-button right">Clear</button>
+          <div class='submit-container row'>
+            <div class='settings-button-div'>
+              <i class='material-icons settings-button left settings-toggle' id="save-settings">save</i>
+              <i class='material-icons settings-button right' id='clear'>undo</i>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -89,9 +95,6 @@
         </div>
         <div class="start-div center">
           <img src="./assets/images/play_button.svg" id="start-app" >
-        </div>
-        <div class="settings center">
-          <button class="center settings-button" id="settings">Settings</button>
         </div>
       </div>
 
@@ -110,7 +113,7 @@
             <div class="timer center">
               <div class="timer-contents">
                 <h1 id="current-time" class="center"></h1>
-                <a class="pause-text">Press to Pause</a>
+                <a class="pause-text">II</a>
               </div>
             </div>
             <a href="#options">
@@ -146,16 +149,17 @@
               <i class="material-icons large center">arrow_drop_up</i>
             </h3>
           </a>
-      <div class="continue-overlay-div hide">
-        <div class="continue-container">
-          <img id='continue-app' src="./assets/images/continue.svg" />
         </div>
-      </div>
-      <div class="complete-overlay-div hide">
-        <div class="complete-container">
-          <img id='complete-app' src="./assets/images/complete.svg" />
+        <div class="continue-overlay-div hide">
+          <div class="continue-container">
+            <img id='continue-app' src="./assets/images/continue.svg" />
+          </div>
         </div>
-      </div>
+        <div class="complete-overlay-div hide">
+          <div class="complete-container">
+            <img id='complete-app' src="./assets/images/complete.svg" />
+          </div>
+        </div>
   </body>
   <script src="../node_modules/d3/d3.min.js" charset="utf-8"></script>
   <script src="../node_modules/c3/c3.min.js"></script>
