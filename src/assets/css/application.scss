@@ -21,6 +21,15 @@ $lighttext: #F5F5F5;
 $start: #388659;
 $reset: #E94F37;
 
+.bkg-img {
+  background-image: url('../images/pr.jpg');
+}
+
+.bkg-img-long {
+  background-image: url('../images/pr2.jpg');
+}
+
+
 body {
   background-color: $savvyblue;
   color: $lighttext;
@@ -237,7 +246,7 @@ body {
 }
 
 .savadoro {
-  overflow: hidden;
+  // overflow: hidden;
   // background-color: $savvyblue;
 
   .savadoro--title {
@@ -318,4 +327,21 @@ body {
 
 #save-settings:disabled {
   color: #AAAAAA;
+}
+
+
+#chart {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  height: 240px;
+  width: 240px;
+}
+
+#segment-chart {
+  position: absolute;
+  top: -216px;
+  left: 20px;
+  height: 240px;
+  width: 240px;
 }

@@ -108,22 +108,37 @@ function savadoro() {
 
   var progressBarTotal = (pomodoroLength * sessionLength) + (shortBreakLength * (sessionLength - 1))
 
+  var segments = []
+  var p = parseFloat(pomodoroLength)
+  var b = parseFloat(shortBreakLength)
+  for(var i = 0; i < sessionLength; i++){
+    if(i === (sessionLength - 1)) {
+      segments[i] = p
+    } else {
+      segments[i] = p+b
+    }
+  }
+
   if(stage === 1) {
     runTimer(pomodoroLength)
-    progressBar(pomodoroLength, progressBarTotal)
-    $("#current-session").text("Pomodoro " + currentSession);
+    progressBar(pomodoroLength, progressBarTotal, segments)
+    // $("#current-session").text("Pomodoro " + currentSession);
+    $('#top').removeClass('bkg-img')
+    $('#top').removeClass('bkg-img-long')
     stage = 2
     restartInfo(pomodoroLength, currentSession, stage)
   } else if ((stage === 2) && (currentSession != sessionLength)) {
     runTimer(shortBreakLength)
-    progressBar(shortBreakLength, progressBarTotal)
-    $("#current-session").text("Short Break " + currentSession);
+    progressBar(shortBreakLength, progressBarTotal, segments)
+    // $("#current-session").text("Short Break " + currentSession);
+    $('#top').addClass('bkg-img')
     stage = 1
     currentSession++
     restartInfo(shortBreakLength, currentSession, stage)
   } else {
     runTimer(longBreakLength)
-    $("#current-session").text("Long Break");
+    $('#top').addClass('bkg-img-long')
+    // $("#current-session").text("Long Break");
     isLongBreak = true;
     currentSession = 1
     stage = 1
@@ -138,10 +153,61 @@ function restartInfo(time, session, stage) {
   }
 }
 
-function progressBar(time, progressBarTotal) {
+function progressBar(time, progressBarTotal, segments) {
   currentProgress = currentProgress + parseFloat(time)
-  var current = Math.round((currentProgress/progressBarTotal)*100) + "%"
-  $('.savadoro--progress').css('width', current)
+  var current = -currentProgress
+  var past = progressBarTotal - current
+
+  var chart = c3.generate({
+    data: {
+      columns: [
+        ['total', past],
+        ['complete', current],
+      ],
+      colors:{
+        total: '#3270A0',
+        complete: '#FB4D3D'
+      },
+      type : 'donut'
+    },
+    legend: {
+      show: false
+    },
+    donut: {
+      label: {
+        show: false
+      },
+      width: 8,
+      axis: {
+        y: {
+          inverted: true
+        }
+      }
+    }
+  })
+
+  var segmentChart = c3.generate({
+    data: {
+      json: segments,
+      colors: 'transparent',
+      type : 'donut'
+    },
+    legend: {
+      show: false
+    },
+    donut: {
+      label: {
+        show: false
+      },
+      width: 8,
+      axis: {
+        y: {
+          inverted: true
+        }
+      }
+    },
+    bindto: '#segment-chart'
+  })
 }
 
 function notify() {

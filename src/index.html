@@ -7,6 +7,7 @@
     <title>Savadoro</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/application.scss">
+    <link href="../node_modules/c3/c3.css" rel="stylesheet">
   </head>
   <body id="top">
     <div id="icon-row" class="row">
@@ -93,13 +94,18 @@
           <button class="center settings-button" id="settings">Settings</button>
         </div>
       </div>
+
+      <div class='chart'>
+        <div id='chart'>
+        </div>
+      </div>
+
+      <div class='chart'>
+        <div id='segment-chart'>
+        </div>
+      </div>
+
         <div class="timer-backdrop">
-          <div class="center current">
-            <div class="savadoro--progress-container progress">
-                <div class="savadoro--progress determinate" style=""></div>
-            </div>
-            Current Session: <span id="current-session"></span>
-          </div>
           <div class="timer-container">
             <div class="timer center">
               <div class="timer-contents">
@@ -151,5 +157,7 @@
         </div>
       </div>
   </body>
+  <script src="../node_modules/d3/d3.min.js" charset="utf-8"></script>
+  <script src="../node_modules/c3/c3.min.js"></script>
   <script src="assets/js/pomadoro.js"></script>
 </html>
