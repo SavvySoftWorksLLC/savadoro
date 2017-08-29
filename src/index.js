@@ -23,7 +23,7 @@ function handleSquirrelEvent() {
   const appFolder = path.resolve(process.execPath, '..');
   const rootAtomFolder = path.resolve(appFolder, '..');
   const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
-  const exeName = path.basename(process.execPath);
+  const exeName = 'Savadoro';
 
   const spawn = function(command, args) {
     let spawnedProcess, error;
@@ -66,7 +66,8 @@ const createWindow = () => {
     resizable: false,
     minimizable: false,
     maximizable: false,
-    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
+    mainWindow.setOverlayIcon: path.join(__dirname, 'assets/icons/png/64x64.png')`
   });
 
   // and load the index.html of the app.
