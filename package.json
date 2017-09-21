@@ -1,14 +1,45 @@
 {
   "name": "savadoro",
   "productName": "Savadoro",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Pomodoro Timer by SavvySoftWorks",
   "main": "src/index.js",
   "scripts": {
     "start": "NODE_ENV=DEV electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "savvysoftworks.savadoro",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "src/assets/icons/Icon.png.ico"
+    }
   },
   "repository": {
     "type": "git",
@@ -61,6 +92,7 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "electron-builder": "^19.27.7",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",

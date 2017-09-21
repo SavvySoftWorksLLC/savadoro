@@ -66,8 +66,7 @@ const createWindow = () => {
     resizable: false,
     minimizable: false,
     maximizable: false,
-    icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
-    mainWindow.setOverlayIcon: path.join(__dirname, 'assets/icons/png/64x64.png')`
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
   });
 
   // and load the index.html of the app.
