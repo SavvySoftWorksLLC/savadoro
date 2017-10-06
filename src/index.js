@@ -73,9 +73,9 @@ const createWindow = () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
-  if(process.env === DEV) {
+  // if(process.env === DEV) {
     mainWindow.webContents.openDevTools();
-  }
+  // }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
