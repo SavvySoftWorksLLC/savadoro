@@ -5,17 +5,17 @@
   "description": "Pomodoro Timer by SavvySoftWorks",
   "main": "src/index.js",
   "scripts": {
-    "start": "NODE_ENV=DEV electron-forge start",
+    "start": "npm install && electron ./app",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "lint": "eslint src",
     "postinstall": "install-app-deps",
-    "start": "npm install && electron ./app",
     "pack": "build --dir",
     "dist": "build"
   },
   "build": {
     "appId": "savvysoftworks.savadoro",
+    "asar": true,
     "dmg": {
       "contents": [
         {
@@ -92,7 +92,7 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
-    "electron-builder": "^19.27.7",
+    "electron-builder": "^19.34.1",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",

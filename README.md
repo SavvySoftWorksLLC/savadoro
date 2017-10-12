@@ -21,6 +21,10 @@ Use the default setting, or enter your own times (in minutes) to create a timer 
     Work: 50 min / Break: 20 min
   ```
 
+[start-up](screenshots/startup.png)
+
+
+
 Savadoro Timer was created in 2017 by:
 
 Gary Newsome gary@savvysoftworks.com
